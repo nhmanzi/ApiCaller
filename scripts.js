@@ -2,19 +2,22 @@ let modal = document.getElementById("myModal");
 let close = document.getElementById("close");
 
 document.addEventListener("DOMContentLoaded", function () {
+  let loader = `Loading ...`;
+  document.getElementById(`initial`).innerText = loader;
+  document.getElementById(`initial`).style.display = "block";
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
     .then((data) => {
       if (data.length > 0) {
         let temp = "";
         data.forEach((user) => {
-          temp += "<div class='card'> ";
-          temp += "<p class='name'>" + user.name + "</p>";
-          temp +=
-            "<p class='email'>" +
-            user.email +
-            `</p> <button id='button${user.id}' onclick='myFunction(${user.id})'>view post</button></div>`;
+          temp += `<div class='card'> 
+             <p class='name'>  ${user.name} </p>
+             <p class='email'> ${user.email} </p>
+              <button id='button${user.id}' onclick='myFunction(${user.id})'>view post</button>
+        </div>`;
         });
+        document.getElementById(`initial`).style.display = "none";
         document.getElementById("cardContainer").innerHTML = temp;
       }
     });
@@ -30,9 +33,10 @@ function myFunction(id) {
         var temp = "";
 
         posts.forEach((post) => {
-          temp += "<div class='cardbody'> ";
-          temp += "<h2>" + post.title + "</h2>";
-          temp += "<span>" + post.body + "</span> </div>";
+          temp += `  <div class='cardbody'> 
+              <h2>${post.title}</h2>
+              <span> ${post.body} </span>
+            </div>`;
         });
         document.getElementById(`button${id}`).innerHTML = "view post";
         document.getElementById("modal_content").innerHTML = temp;
