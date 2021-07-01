@@ -1,15 +1,29 @@
 body {
   font-family: "Poppins", sans-serif;
   justify-content: center;
-  background-color: #f5f5fd;
+  background-color: #8ddbff;
 }
 h1 {
+  color: #058cfc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bolder;
   margin: 64px;
   text-align: center;
 }
+#initial {
+  position: absolute;
+  top: 4em;
+  left: 35%;
+  display: none;
+  text-align: center;
+  font-size: 2em;
+  color: #000;
+}
 button {
   cursor: pointer;
-  background-color: rgb(89, 89, 253);
+  background-color: #058cfc;
   width: 80%;
   color: white;
   letter-spacing: 2px;
@@ -29,41 +43,41 @@ nav {
   justify-content: center;
   width: 100%;
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   top: 0px;
   height: 96px;
-  margin-top: 5vh;
   position: sticky;
 }
 .name {
   margin: 0 0 16px 0;
+  padding: 0;
   font-size: 1.3em;
   color: #333;
   font-weight: 900;
 }
 .email {
   margin: 0 0 16px 0;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 400;
-  color: #666;
+  color: #444;
 }
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1em;
   border-radius: 8px;
   height: auto;
   width: 300px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 8px 20px rgba(11, 21, 107, 0.05);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
 }
 .main {
+  margin-top: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +86,7 @@ nav {
   padding: 2em;
   width: 80%;
   display: grid;
-  gap: 2em 2em;
+  gap: 2em;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
 }
@@ -96,13 +110,15 @@ nav {
   height: 90vh;
   background: fefefe;
   border-top-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
 }
 .modal_content {
+  margin: 4em auto;
+  width: 80%;
+  justify-content: center;
   display: grid;
-  padding: 3em 2em;
   gap: 1em;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 300px);
   grid-template-rows: 1fr 1fr;
 }
 
@@ -111,8 +127,6 @@ nav {
   height: 40px;
   width: 40px;
   color: rgb(124, 28, 28);
-  position: sticky;
-  top: 4vh;
   left: 95%;
   font-size: 28px;
   font-weight: bold;
@@ -129,4 +143,29 @@ nav {
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+}
+#post_title {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  top: 0;
+  position: sticky;
+}
+
+@media (max-width: 500px) {
+  #cardContainer {
+    padding: 1em;
+    width: 90%;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  .modal_content {
+    margin: 1em auto;
+    width: 90%;
+    grid-template-columns: repeat(1, 300px);
+  }
 }
