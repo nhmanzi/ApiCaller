@@ -103,7 +103,7 @@ nav {
   background: rgba(0, 0, 0, 0.5);
 }
 .modalWrapper {
-  position: relative;
+  position: fixed;
   background-color: rgb(245, 243, 243);
   margin-top: 10vh;
   overflow: auto;
@@ -159,7 +159,6 @@ nav {
   #cardContainer {
     padding: 1em;
     width: 90%;
-    display: grid;
     gap: 1em;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(10, 1fr);
