@@ -171,6 +171,7 @@ nav {
   }
 
   #initial {
+    top: 6em;
     left: 20%;
     font-size: 1em;
   }
